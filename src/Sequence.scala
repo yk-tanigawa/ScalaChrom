@@ -3,16 +3,15 @@
  */
 class Sequence(s : String) {
 
-  val len = s.length()
   val seq = s.toCharArray.map(c2b)
+  val length = seq.length
 
 
-  def dump() = {
-    println(len)
+  def to_str() = {
     println(seq.map(b2c).mkString)
   }
 
-  def c2b(c : Char) : Byte = {
+  private def c2b(c : Char) : Byte = {
     c match {
       case 'A' => 0
       case 'C' => 1
@@ -26,7 +25,7 @@ class Sequence(s : String) {
     }
   }
 
-  def b2c(n : Byte) : Char = {
+  private def b2c(n : Byte) : Char = {
     n match {
       case 0 => 'A'
       case 1 => 'C'
